@@ -1,0 +1,24 @@
+***Nav.Js***
+
+1. Import Statements:
+   - `import React, { useEffect, useState } from 'react'`:`React` is the core library for building React applications, and `useEffect` and `useState` are hooks that allow you to manage side effects and state within functional components.
+
+   - `import "./Nav.css"`: This line imports a CSS file for styling the `Nav` component.
+
+2. `const [show, handleShow] = useState(false);`:
+   This line initializes a state variable `show` and a function `handleShow` using the `useState` hook. `show` is used to determine whether the navigation bar should change its appearance based on the user's scroll position. It's initially set to `false`.
+
+3. `useEffect(() => { ... }, []);`:
+   The `useEffect` hook is used to perform side effects in functional components. In this case, it is used to add an event listener to the window's scroll event.
+
+   - Inside the `useEffect` callback function, `handleScroll` is defined. It's a function that checks the current value of `window.scrollY` (the vertical scroll position) and sets the `show` state accordingly. If the user has scrolled more than 100 pixels down, `show` is set to `true`, indicating that a special style should be applied to the navigation bar. If the user scrolls back to the top, `show` is set to `false`.
+
+   - The `window.addEventListener("scroll", handleScroll);` This event listener calls the `handleScroll` function when the user scrolls the page.
+
+   - A cleanup function is returned from the `useEffect` to remove the event listener when the component is unmounted. This prevents memory leaks.
+
+4. Return Statement:
+
+   - `<div className={`nav ${show && "nav__black"}`>`: This `div` has a class name of "nav," and its class may also include "nav__black" when the `show` state is `true`. This class conditional rendering changes the appearance of the navigation bar based on the value of `show`.
+
+This code creates a React navigation bar component that changes its style (e.g., color) when the user scrolls down the page. This is achieved by adding a scroll event listener and updating the `show` state accordingly. 

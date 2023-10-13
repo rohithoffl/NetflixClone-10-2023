@@ -1,0 +1,30 @@
+***App.JS***
+
+1. Import Statements:
+   - `import './App.css';`: This line imports a CSS file, likely for styling the application. The `./App.css` file is used to define the styles for the `App` component.
+
+   - `import React from 'react';`: This line imports the React library
+
+   - `import Row from './Row';`: This line imports a component named `./Row.js`
+
+   - `import requests from './requests';`: This line imports a module named `requests` from a file located at `./requests.js`. This module probably contains various URLs or API endpoints for fetching different types of content (e.g., Netflix originals, trending, top-rated, etc.).
+
+   - `import Banner from './Banner';`: This line imports a component named `Banner` from a file located at `./Banner.js`. The `Banner` component is used for displaying a prominent banner within the app.
+
+   - `import Nav from './Nav';`: This line imports a component named `Nav` from a file located at `./Nav.js`. 
+
+2. `function App() { ... }`:
+  The `App` component is the root component of the application, and it's what gets rendered.
+
+3. `return (...) { ... }`:
+
+   - `<div className="App">`:This is a top-level container for the entire application.
+
+   - `<Nav />`: This line renders the `Nav` component. It's the menu for the app.
+
+   - `<Banner />`: This line renders the `Banner` component. It's used to display a banner or advertisement.
+
+   - A series of `<Row ... />` elements: These elements render the `Row` component multiple times, each with different `title` and `fetchUrl` props. Each `Row` component represents a row of content (e.g., movies or TV shows) with a specific title and data source.
+
+4. `export default App;`:
+    This allows other parts of the application to import and use the `App` component.

@@ -1,0 +1,18 @@
+***axios.js***
+
+Sets up an Axios instance for making HTTP requests to a particular base URL. 
+
+1. `import axios from "axios";`:
+   This line imports the Axios library, which is used for making HTTP requests.
+
+2. `const instance = axios.create({ ... });`:
+   This code creates an Axios instance named `instance` by using the `axios.create` method. An Axios instance is a pre-configured instance of Axios with specific default settings, including a base URL. In this case, the instance is configured with a base URL for the API requests.
+
+   - `baseURL: "https://api.themoviedb.org/3"`: The `baseURL` property is set to the base URL of the API that the application will communicate with. All subsequent requests made using this Axios instance will be relative to this base URL.
+
+3. `// instance.get('/foo-bar');` and `// GET https://api.themoviedb.org/3/foo-bar`:
+   These lines are comments, indicating how the `instance` can be used to make GET requests. To make a request, you would typically use the instance's methods (e.g., `get`, `post`, `put`, `delete`) and provide the relative URL path to the resource you want to access.
+
+   - For example, the comment `instance.get('/foo-bar');` shows that you can use the `get` method on the `instance` to make a GET request to the `/foo-bar` resource. Axios will automatically prepend the base URL to the request, resulting in a request to `https://api.themoviedb.org/3/foo-bar`.
+
+In summary, this code sets up an Axios instance with a base URL of "https://api.themoviedb.org/3." This instance can be easily used to make HTTP requests to the Movie Database API. The instance's methods, such as `get`, `post`, `put`, or `delete,` can be called to make specific requests, and the base URL will be automatically combined with the provided URL path to create the full request URL.

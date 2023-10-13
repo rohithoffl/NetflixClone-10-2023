@@ -1,0 +1,42 @@
+***Banner.js***
+
+1. Import Statements:
+
+   - `import axios from './axios'`: JavaScript library for making HTTP requests.
+
+   - `import requests from './requests'`: Contains URLs or API endpoints for fetching content.
+
+   - `import './Banner.css'`: This imports a CSS file for styling the `Banner` component.
+
+2. `function Banner() { ... }`:
+   This is the `Banner` component, defined as a functional component.
+
+3. `const [movie, setMovie] = useState([]);`:
+   This line initializes a state variable `movie` and a function `setMovie` using the `useState` hook. The `movie` state will hold information about the current movie or TV show to display in the banner.
+
+4. `useEffect(() => { ... }, []);`:
+   The `useEffect` hook is used to fetch data when the component is mounted.
+
+   - Inside the `useEffect` callback function, there is an `async` function called `fetchData()`. It makes an asynchronous Axios GET request to the URL specified in `requests.fetchNetflixOriginals`. When the data is fetched, it selects a random movie or TV show from the results and updates the `movie` state with it.
+
+   - The `fetchData()` function is called immediately after its definition to initiate the data fetch.
+
+5. `console.log(movie);`:
+   This line logs the `movie` state to the console, which can be useful for debugging and seeing the data fetched.
+
+6. `function truncate(str, n) { ... }`:
+   This is a helper function that shortens a string by truncating it to a maximum length of `n` characters. If the string is longer than `n` characters, it appends "..." to the end.
+
+7. Return Statement:
+
+   - The `header` element with the class name 'banner' is used to create the banner. It has an inline style that sets the background image to be the backdrop of the movie or TV show. The URL for the backdrop is generated using the `movie?.backdrop_path` property.
+
+   - Inside the banner:
+     - The movie or TV show title is displayed in an `h1` element with the class name 'banner__title.'
+     - Two buttons for "Play" and "My List" are displayed with class names 'banner__button.'
+     - A description or overview of the movie is displayed in an `h1` element with the class name 'banner__description.' The `truncate` function is used to limit the text to 150 characters.
+
+   - A `div` element with the class name 'banner--fadeBottom' is used for styling and adding a fade effect to the bottom of the banner.
+
+8. `export default Banner;`:
+   This line exports the `Banner` component as the default export of this module, making it available for use in other parts of the application.

@@ -1,0 +1,13 @@
+***requests.js***
+
+Contains a set of API request URLs. These URLs are used to fetch data from a remote server, most likely as part of a movie and TV show streaming service application.
+
+1. `const API_KEY = "517899c48b934220051609fc702f5aa8";`:
+   This line declares a constant variable `API_KEY` and assigns it a string value. The API key is a unique identifier that is often required when making requests to certain web services or APIs. In this case, it's likely used to authenticate and authorize access to a movie or TV show database.
+
+2. `const requests = { ... }`:
+   This code defines an object named `requests` with several properties. Each property represents a specific type of API request that can be made to fetch different types of content.
+
+3. `export default requests;`:
+   This line exports the `requests` object as the default export of this module. This allows other parts of the application to import and use the `requests` object to make API requests to fetch content from the specified endpoints.
+

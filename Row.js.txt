@@ -1,0 +1,27 @@
+***Row.js***
+
+1. Importing:
+
+   - `React`, `useState`, and `useEffect` are imported from the 'react' library. 
+   - `axios` is imported from a custom module called 'axios' for making HTTP requests.
+   - The component is styled using a CSS file called 'Row.css.'
+   - `YouTube` and `movieTrailer` components are imported from their respective packages.
+
+2. A constant `base_url` is defined to store the base URL for retrieving movie poster images from the TMDb (The Movie Database) API.
+
+3. The `Row` component is defined. It takes several props as input, including `title`, `fetchUrl`, and `isLargeRow`.
+
+4. Inside the component, two pieces of state are set using the `useState` hook:
+   - `movies`: An array that will store movie data fetched from the API.
+   - `trailerUrl`: A string that will store the URL of a YouTube trailer video.
+
+5. The `useEffect` hook is used to fetch data from the API when the component mounts. 
+
+6. An object `opts` is defined, which contains options for the YouTube video player.
+
+7. The `handleClick` function is defined. It takes a `movie` as an argument and is called when a movie poster is clicked. This function checks whether a trailer is already open (`trailerUrl` is not empty). If it is open, it clears the trailer URL. If not, it uses the `movieTrailer` package to search for the trailer URL based on the movie's name. If found, it extracts the video ID and sets it in the `trailerUrl` state.
+
+8. The component's `return` statement defines what is rendered on the screen. It consists of:
+   - A title for the row.
+   - A list of movie posters retrieved from the API, with each poster having an `onClick` event that triggers the `handleClick` function.
+   - If a trailer URL exists in the state (`trailerUrl` is not empty), a YouTube video player is displayed with the trailer.
